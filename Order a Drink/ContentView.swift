@@ -10,11 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            GeometryReader { geometry in
+        VStack(alignment: .leading) {
             Drinks_Splash()
-                .frame(height: geometry.size.height)
-            }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding(.horizontal)
             Drink_List()
         }
     }

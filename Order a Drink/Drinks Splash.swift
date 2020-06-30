@@ -9,22 +9,21 @@
 import SwiftUI
 
 struct Drinks_Splash: View {
+    var screenWidth = 0.0
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
         Text("Choose a Drink Category")
             .font(.largeTitle)
             .fontWeight(.bold)
-            .multilineTextAlignment(.center)
+            .multilineTextAlignment(.leading)
             .padding(.top)
-        GeometryReader { geometry in
-            Image("Drinks Splash")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: geometry.size.width - 30)
-                .clipped()
-                .cornerRadius(20)
-            }
+        Image("Drinks Splash")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .clipped()
+            .cornerRadius(20)
         }
+    
     }
 }
 
