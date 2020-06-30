@@ -8,28 +8,36 @@
 
 import SwiftUI
 
-struct Drink_List: View {
+struct List_Item: View {
+    @State var showingDetail = false
     
-    @State var showingNonAlco = false
+    var name = "Loading..."
+    var image = "Drink1"
+    var sheetView = Non_Alcoholic_Drinks()
+    var body: some View {
+        Button(action: {
+            self.showingDetail.toggle()
+        }) {
+            HStack {
+            Text(name)
+                .font(.title)
+            Divider()
+            Image(image)
+                .resizable()
+                .frame(width: 100, height: 100, alignment: .trailing)
+            }
+        }
+        .sheet(isPresented: $showingDetail) {
+            self.sheetView
+        }
+    }
+}
+
+struct Drink_List: View {
     
     var body: some View {
         List {
-            Button(action: {
-                self.showingNonAlco.toggle()
-            }) {
-            HStack {
-                Text("Non-Alcoholic Drinks")
-                    .font(.title)
-                Divider()
-                Image("Drink1")
-                    .resizable()
-                    .frame(width: 100, height: 100, alignment: .trailing)
-                }
-            }
-            .sheet(isPresented: $showingNonAlco) {
-                Non_Alcoholic_Drinks()
-            }
-            
+                List_Item(name: "Non-Alcoholic Drinks", image: "Drink1", sheetView: Non_Alcoholic_Drinks())
         }
     }
 }
