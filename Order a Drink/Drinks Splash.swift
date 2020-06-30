@@ -11,9 +11,11 @@ import SwiftUI
 struct Drinks_Splash: View {
     var body: some View {
         VStack {
-        Text("Drinks")
+        Text("Choose a Drink Category")
             .font(.largeTitle)
             .fontWeight(.bold)
+            .multilineTextAlignment(.center)
+            .padding(.top)
         GeometryReader { geometry in
             Image("Drinks Splash")
                 .resizable()

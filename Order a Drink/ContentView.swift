@@ -11,8 +11,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            GeometryReader { geometry in
             Drinks_Splash()
-                .frame(height: 300)
+                .frame(height: geometry.size.height)
+            }
             Drink_List()
         }
     }
