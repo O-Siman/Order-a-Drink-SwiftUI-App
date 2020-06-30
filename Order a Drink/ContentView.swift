@@ -10,7 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Drinks_Splash()
+                .frame(height: 300)
+            Drink_List()
+        }
     }
 }
 

@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0714273D24AB896300562D18 /* Drinks Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0714273C24AB896300562D18 /* Drinks Splash.swift */; };
 		0721E0E524AA8C2000D56F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721E0E424AA8C2000D56F93 /* AppDelegate.swift */; };
 		0721E0E724AA8C2000D56F93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721E0E624AA8C2000D56F93 /* SceneDelegate.swift */; };
 		0721E0E924AA8C2000D56F93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721E0E824AA8C2000D56F93 /* ContentView.swift */; };
 		0721E0EB24AA8C2200D56F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0721E0EA24AA8C2200D56F93 /* Assets.xcassets */; };
 		0721E0EE24AA8C2200D56F93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0721E0ED24AA8C2200D56F93 /* Preview Assets.xcassets */; };
 		0721E0F124AA8C2200D56F93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0721E0EF24AA8C2200D56F93 /* LaunchScreen.storyboard */; };
+		07C4AC8024AB8CCF00847AE6 /* Drink List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4AC7F24AB8CCF00847AE6 /* Drink List.swift */; };
+		07D5E80D24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0714273C24AB896300562D18 /* Drinks Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks Splash.swift"; sourceTree = "<group>"; };
 		0721E0E124AA8C2000D56F93 /* Order a Drink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Order a Drink.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0721E0E424AA8C2000D56F93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0721E0E624AA8C2000D56F93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		0721E0ED24AA8C2200D56F93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0721E0F024AA8C2200D56F93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0721E0F224AA8C2200D56F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07C4AC7F24AB8CCF00847AE6 /* Drink List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drink List.swift"; sourceTree = "<group>"; };
+		07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Non-Alcoholic Drinks.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				0721E0E424AA8C2000D56F93 /* AppDelegate.swift */,
+				0714273C24AB896300562D18 /* Drinks Splash.swift */,
 				0721E0E624AA8C2000D56F93 /* SceneDelegate.swift */,
 				0721E0E824AA8C2000D56F93 /* ContentView.swift */,
+				07C4AC7F24AB8CCF00847AE6 /* Drink List.swift */,
+				07D5E80B24ABB99D0071FD1E /* Sub-Sections */,
 				0721E0EA24AA8C2200D56F93 /* Assets.xcassets */,
 				0721E0EF24AA8C2200D56F93 /* LaunchScreen.storyboard */,
 				0721E0F224AA8C2200D56F93 /* Info.plist */,
@@ -73,6 +82,14 @@
 				0721E0ED24AA8C2200D56F93 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		07D5E80B24ABB99D0071FD1E /* Sub-Sections */ = {
+			isa = PBXGroup;
+			children = (
+				07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */,
+			);
+			path = "Sub-Sections";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +165,10 @@
 			files = (
 				0721E0E524AA8C2000D56F93 /* AppDelegate.swift in Sources */,
 				0721E0E724AA8C2000D56F93 /* SceneDelegate.swift in Sources */,
+				07D5E80D24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift in Sources */,
+				0714273D24AB896300562D18 /* Drinks Splash.swift in Sources */,
 				0721E0E924AA8C2000D56F93 /* ContentView.swift in Sources */,
+				07C4AC8024AB8CCF00847AE6 /* Drink List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
