@@ -19,13 +19,14 @@ struct List_Item: View {
             self.showingDetail.toggle()
         }) {
             HStack {
-            Text(name)
-                .font(.title)
-                
-            Spacer()
-            Image(image)
-                .resizable()
-                .frame(width: 100, height: 100, alignment: .trailing)
+                Image(image)
+                    .resizable()
+                    .clipShape(Circle())
+                    .frame(width: 60, height: 60, alignment: .trailing)
+                    .overlay(Circle().stroke(Color.gray, lineWidth: 3))
+                Text(name)
+                    .fontWeight(.bold)
+                Spacer()
             }
             .frame(maxWidth: .infinity)
         }

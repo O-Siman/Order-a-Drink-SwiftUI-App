@@ -16,7 +16,7 @@ struct ContentView: View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
                 ZStack(alignment: .top) {
-                        Rectangle()
+                        Rectangle() 
                             .fill(LinearGradient(gradient: Gradient(colors: [.pink, .blue]), startPoint: .topLeading, endPoint: .bottomTrailing))
                             .frame(height: geometry.size.width * 0.7)
                             .edgesIgnoringSafeArea(.top)
