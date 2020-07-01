@@ -15,7 +15,6 @@ struct Drinks_Splash: View {
             Text("Order a Drink!")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .multilineTextAlignment(.leading)
                 .padding(.top)
             Image("Drinks Splash")
                 .resizable()

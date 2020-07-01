@@ -19,6 +19,8 @@
 		07B1F26C24ACE2B5003E4C28 /* Tequilas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F26B24ACE2B5003E4C28 /* Tequilas.swift */; };
 		07B1F26E24ACE2C2003E4C28 /* Sparkling Wines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F26D24ACE2C2003E4C28 /* Sparkling Wines.swift */; };
 		07B1F27124ACE435003E4C28 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F27024ACE435003E4C28 /* AppView.swift */; };
+		07B1F27524ACE5BC003E4C28 /* OrdersSplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F27424ACE5BC003E4C28 /* OrdersSplash.swift */; };
+		07B1F27724ACE654003E4C28 /* OrderContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F27624ACE654003E4C28 /* OrderContentView.swift */; };
 		07C4AC8024AB8CCF00847AE6 /* Drink List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4AC7F24AB8CCF00847AE6 /* Drink List.swift */; };
 		07D5E80D24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */; };
 		07D5E80F24ABD6D30071FD1E /* Red Wines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5E80E24ABD6D30071FD1E /* Red Wines.swift */; };
@@ -39,6 +41,8 @@
 		07B1F26B24ACE2B5003E4C28 /* Tequilas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tequilas.swift; sourceTree = "<group>"; };
 		07B1F26D24ACE2C2003E4C28 /* Sparkling Wines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sparkling Wines.swift"; sourceTree = "<group>"; };
 		07B1F27024ACE435003E4C28 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		07B1F27424ACE5BC003E4C28 /* OrdersSplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersSplash.swift; sourceTree = "<group>"; };
+		07B1F27624ACE654003E4C28 /* OrderContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderContentView.swift; sourceTree = "<group>"; };
 		07C4AC7F24AB8CCF00847AE6 /* Drink List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drink List.swift"; sourceTree = "<group>"; };
 		07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Non-Alcoholic Drinks.swift"; sourceTree = "<group>"; };
 		07D5E80E24ABD6D30071FD1E /* Red Wines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Red Wines.swift"; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				07B1F27024ACE435003E4C28 /* AppView.swift */,
+				07B1F27324ACE5A4003E4C28 /* My Orders */,
 				07B1F27224ACE539003E4C28 /* Menu */,
 				07D5E80B24ABB99D0071FD1E /* Sub-Sections */,
 				07B1F26F24ACE3F5003E4C28 /* Delegates */,
@@ -111,6 +116,15 @@
 				07C4AC7F24AB8CCF00847AE6 /* Drink List.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		07B1F27324ACE5A4003E4C28 /* My Orders */ = {
+			isa = PBXGroup;
+			children = (
+				07B1F27424ACE5BC003E4C28 /* OrdersSplash.swift */,
+				07B1F27624ACE654003E4C28 /* OrderContentView.swift */,
+			);
+			path = "My Orders";
 			sourceTree = "<group>";
 		};
 		07D5E80B24ABB99D0071FD1E /* Sub-Sections */ = {
@@ -199,6 +213,7 @@
 			files = (
 				0721E0E524AA8C2000D56F93 /* AppDelegate.swift in Sources */,
 				07B1F26C24ACE2B5003E4C28 /* Tequilas.swift in Sources */,
+				07B1F27524ACE5BC003E4C28 /* OrdersSplash.swift in Sources */,
 				0721E0E724AA8C2000D56F93 /* SceneDelegate.swift in Sources */,
 				07D5E80D24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift in Sources */,
 				07B1F26A24ACE2A9003E4C28 /* Cocktails.swift in Sources */,
@@ -207,6 +222,7 @@
 				07B1F26E24ACE2C2003E4C28 /* Sparkling Wines.swift in Sources */,
 				07B1F27124ACE435003E4C28 /* AppView.swift in Sources */,
 				0721E0E924AA8C2000D56F93 /* ContentView.swift in Sources */,
+				07B1F27724ACE654003E4C28 /* OrderContentView.swift in Sources */,
 				07D5E80F24ABD6D30071FD1E /* Red Wines.swift in Sources */,
 				07C4AC8024AB8CCF00847AE6 /* Drink List.swift in Sources */,
 			);

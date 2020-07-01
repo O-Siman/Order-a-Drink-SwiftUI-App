@@ -16,6 +16,11 @@ struct AppView: View {
                     Image(systemName: "list.dash")
                     Text("Menu")
                 }
+            OrderContentView()
+                .tabItem {
+                    Image(systemName: "pencil.and.ellipsis.rectangle")
+                    Text("Orders")
+                }
         }
     }
 }
