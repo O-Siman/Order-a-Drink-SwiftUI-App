@@ -15,37 +15,36 @@ struct List_Item: View {
     var image = "PlaceholderImage"
     var sheetView: AnyView
     var body: some View {
-        Button(action: {
-            self.showingDetail.toggle()
-        }) {
+        NavigationLink(destination: AnyView(sheetView)) {
             HStack {
                 Image(image)
                     .resizable()
                     .clipShape(Circle())
                     .frame(width: 60, height: 60, alignment: .trailing)
                     .overlay(Circle().stroke(Color.gray, lineWidth: 3))
+                    .shadow(radius: 3)
                 Text(name)
                     .fontWeight(.bold)
                 Spacer()
             }
             .frame(maxWidth: .infinity)
         }
-        .sheet(isPresented: $showingDetail) {
-            self.sheetView
-        }
+        .navigationBarTitle("Categories")
     }
 }
 
 struct Drink_List: View {
     
     var body: some View {
-        List {
-            List_Item(name: "Non-Alcoholic Drinks", image: "NonAlco", sheetView: AnyView(Non_Alcoholic_Drinks()))
-            List_Item(name: "Red Wines", image: "RedWine", sheetView: AnyView(Red_Wines()))
-            List_Item(name: "White Wines", image: "WhiteWine", sheetView: AnyView(Red_Wines()))
-            List_Item(name: "Cocktails", image: "Cocktail", sheetView: AnyView(Red_Wines()))
-            List_Item(name: "Tequilas", image: "Tequila", sheetView: AnyView(Red_Wines()))
-            List_Item(name: "Sparkling Wines", image: "SparklingWine", sheetView: AnyView(Red_Wines()))
+        NavigationView {
+                List {
+                    List_Item(name: "Non-Alcoholic Drinks", image: "NonAlco", sheetView: AnyView(Non_Alcoholic_Drinks()))
+                    List_Item(name: "Red Wines", image: "RedWine", sheetView: AnyView(Red_Wines()))
+                    List_Item(name: "White Wines", image: "WhiteWine", sheetView: AnyView(Red_Wines()))
+                    List_Item(name: "Cocktails", image: "Cocktail", sheetView: AnyView(Red_Wines()))
+                    List_Item(name: "Tequilas", image: "Tequila", sheetView: AnyView(Red_Wines()))
+                    List_Item(name: "Sparkling Wines", image: "SparklingWine", sheetView: AnyView(Red_Wines()))
+                }
         }
     }
 }

@@ -11,8 +11,8 @@ import SwiftUI
 struct Drinks_Splash: View {
     var screenWidth = 0.0
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Choose a Drink Category")
+        VStack(alignment: .center) {
+            Text("Order a Drink!")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.leading)
