@@ -9,14 +9,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.colorScheme) var varColorScheme
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Drinks_Splash()
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding(.horizontal)
-            Drink_List()
+        GeometryReader { geometry in
+            VStack(alignment: .leading) {
+                ZStack(alignment: .top) {
+                        Rectangle()
+                            .fill(LinearGradient(gradient: Gradient(colors: [.pink, .blue]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                            .frame(height: geometry.size.width * 0.7)
+                            .edgesIgnoringSafeArea(.top)
+                            .opacity(self.varColorScheme == .dark ? 1.0 : 0.6)
+                        Drinks_Splash()
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .padding(.horizontal)
+                    }
+                Drink_List()
+            }
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
