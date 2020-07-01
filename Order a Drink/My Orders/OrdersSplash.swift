@@ -11,6 +11,7 @@ import SwiftUI
 struct OrdersSplash: View {
     @Environment(\.colorScheme) var varColorScheme
     var body: some View {
+        GeometryReader { geometry in
         ZStack {
             Rectangle()
                 .fill(LinearGradient(gradient: Gradient(colors: [.pink, .blue]), startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -18,9 +19,9 @@ struct OrdersSplash: View {
             Text("My Orders")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.top, 16.0)
+                .padding(.top, geometry.safeAreaInsets.top)
             }
-
+        }
     }
 }
 

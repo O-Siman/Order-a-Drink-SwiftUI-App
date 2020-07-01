@@ -10,11 +10,13 @@ import SwiftUI
 
 struct OrderContentView: View {
     var body: some View {
-        VStack {
-        OrdersSplash()
-            .frame(height: 120)
-            .edgesIgnoringSafeArea(.top)
-        Spacer()
+        GeometryReader { geometry in
+            VStack {
+            OrdersSplash()
+                .edgesIgnoringSafeArea(.top)
+                .frame(height: geometry.safeAreaInsets.top + 25)
+            Spacer()
+            }
         }
     }
 }
