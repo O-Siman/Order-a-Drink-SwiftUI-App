@@ -14,6 +14,7 @@
 		0721E0EB24AA8C2200D56F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0721E0EA24AA8C2200D56F93 /* Assets.xcassets */; };
 		0721E0EE24AA8C2200D56F93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0721E0ED24AA8C2200D56F93 /* Preview Assets.xcassets */; };
 		0721E0F124AA8C2200D56F93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0721E0EF24AA8C2200D56F93 /* LaunchScreen.storyboard */; };
+		073C7ADC24AD596E00262CD3 /* OrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C7ADB24AD596E00262CD3 /* OrderList.swift */; };
 		07B1F26824ACE29C003E4C28 /* White Wines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F26724ACE29C003E4C28 /* White Wines.swift */; };
 		07B1F26A24ACE2A9003E4C28 /* Cocktails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F26924ACE2A9003E4C28 /* Cocktails.swift */; };
 		07B1F26C24ACE2B5003E4C28 /* Tequilas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F26B24ACE2B5003E4C28 /* Tequilas.swift */; };
@@ -36,6 +37,7 @@
 		0721E0ED24AA8C2200D56F93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0721E0F024AA8C2200D56F93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0721E0F224AA8C2200D56F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073C7ADB24AD596E00262CD3 /* OrderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderList.swift; sourceTree = "<group>"; };
 		07B1F26724ACE29C003E4C28 /* White Wines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "White Wines.swift"; sourceTree = "<group>"; };
 		07B1F26924ACE2A9003E4C28 /* Cocktails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktails.swift; sourceTree = "<group>"; };
 		07B1F26B24ACE2B5003E4C28 /* Tequilas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tequilas.swift; sourceTree = "<group>"; };
@@ -121,8 +123,9 @@
 		07B1F27324ACE5A4003E4C28 /* My Orders */ = {
 			isa = PBXGroup;
 			children = (
-				07B1F27424ACE5BC003E4C28 /* OrdersSplash.swift */,
 				07B1F27624ACE654003E4C28 /* OrderContentView.swift */,
+				07B1F27424ACE5BC003E4C28 /* OrdersSplash.swift */,
+				073C7ADB24AD596E00262CD3 /* OrderList.swift */,
 			);
 			path = "My Orders";
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			files = (
 				0721E0E524AA8C2000D56F93 /* AppDelegate.swift in Sources */,
 				07B1F26C24ACE2B5003E4C28 /* Tequilas.swift in Sources */,
+				073C7ADC24AD596E00262CD3 /* OrderList.swift in Sources */,
 				07B1F27524ACE5BC003E4C28 /* OrdersSplash.swift in Sources */,
 				0721E0E724AA8C2000D56F93 /* SceneDelegate.swift in Sources */,
 				07D5E80D24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift in Sources */,
@@ -366,6 +370,7 @@
 				DEVELOPMENT_TEAM = 7PDHA6MK35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Order a Drink/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +392,7 @@
 				DEVELOPMENT_TEAM = 7PDHA6MK35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Order a Drink/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
