@@ -12,10 +12,10 @@ struct OrdersSplash: View {
     @Environment(\.colorScheme) var varColorScheme
     var body: some View {
         GeometryReader { geometry in
-        ZStack {
+            ZStack(alignment: .top) {
             Rectangle()
                 .fill(LinearGradient(gradient: Gradient(colors: [.pink, .blue]), startPoint: .topLeading, endPoint: .bottomTrailing))
-            .opacity(self.varColorScheme == .dark ? 1.0 : 0.6)
+                .opacity(self.varColorScheme == .dark ? 1.0 : 0.6)
             Text("My Orders")
                 .font(.largeTitle)
                 .fontWeight(.bold)
