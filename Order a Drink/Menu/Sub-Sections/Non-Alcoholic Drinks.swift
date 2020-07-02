@@ -22,23 +22,19 @@ struct Detail_Item: View {
         self.drink = drink
         self.description = description
         self.imageName = imageName
-        globalDrink = drink
     }
     
     var body: some View {
         Button(action: {
             self.showingDetail.toggle()
+            globalDrink = self.drink
+            globalDescription = self.description
+            globalImageName = self.imageName
         }) {
             Text(self.drink)
-            
         }
         .sheet(isPresented: $showingDetail) {
-            VStack {
-                Text(self.drink)
-                    .font(.title)
-                Text(self.description)
-                Image(self.imageName)
-            }
+            ConfirmView(viewIsPresented: self.$showingDetail)
         }
         .onAppear {
             print("ContentView appeared!")
