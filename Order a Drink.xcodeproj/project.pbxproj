@@ -15,6 +15,7 @@
 		0721E0EE24AA8C2200D56F93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0721E0ED24AA8C2200D56F93 /* Preview Assets.xcassets */; };
 		0721E0F124AA8C2200D56F93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0721E0EF24AA8C2200D56F93 /* LaunchScreen.storyboard */; };
 		073C7ADC24AD596E00262CD3 /* OrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C7ADB24AD596E00262CD3 /* OrderList.swift */; };
+		07AF93E424AEA3E700FC5906 /* Keyboarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF93E324AEA3E700FC5906 /* Keyboarder.swift */; };
 		07B1F26824ACE29C003E4C28 /* White Wines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F26724ACE29C003E4C28 /* White Wines.swift */; };
 		07B1F26A24ACE2A9003E4C28 /* Cocktails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F26924ACE2A9003E4C28 /* Cocktails.swift */; };
 		07B1F26C24ACE2B5003E4C28 /* Tequilas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B1F26B24ACE2B5003E4C28 /* Tequilas.swift */; };
@@ -25,54 +26,16 @@
 		07C4AC8024AB8CCF00847AE6 /* Drink List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4AC7F24AB8CCF00847AE6 /* Drink List.swift */; };
 		07D5E80D24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */; };
 		07D5E80F24ABD6D30071FD1E /* Red Wines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5E80E24ABD6D30071FD1E /* Red Wines.swift */; };
-		07FCD0D724AE673900341507 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FCD0D524AE673900341507 /* Interface.storyboard */; };
-		07FCD0D924AE673E00341507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FCD0D824AE673E00341507 /* Assets.xcassets */; };
-		07FCD0E024AE673E00341507 /* Order from Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 07FCD0DF24AE673E00341507 /* Order from Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		07FCD0E524AE673E00341507 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCD0E424AE673E00341507 /* ContentView.swift */; };
-		07FCD0E724AE673E00341507 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCD0E624AE673E00341507 /* HostingController.swift */; };
-		07FCD0E924AE673E00341507 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCD0E824AE673E00341507 /* ExtensionDelegate.swift */; };
-		07FCD0EB24AE674000341507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FCD0EA24AE674000341507 /* Assets.xcassets */; };
-		07FCD0EE24AE674000341507 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FCD0ED24AE674000341507 /* Preview Assets.xcassets */; };
-		07FCD0F224AE674000341507 /* Order from Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 07FCD0D324AE673900341507 /* Order from Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		07FCD0FC24AE777800341507 /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCD0FB24AE777800341507 /* ConfirmView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		07FCD0E124AE673E00341507 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0721E0D924AA8C2000D56F93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07FCD0DE24AE673E00341507;
-			remoteInfo = "Order from Watch Extension";
-		};
-		07FCD0F024AE674000341507 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0721E0D924AA8C2000D56F93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07FCD0D224AE673900341507;
-			remoteInfo = "Order from Watch";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		07FCD0F624AE674000341507 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				07FCD0E024AE673E00341507 /* Order from Watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		07FCD0FA24AE674000341507 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				07FCD0F224AE674000341507 /* Order from Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +53,7 @@
 		0721E0F024AA8C2200D56F93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0721E0F224AA8C2200D56F93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		073C7ADB24AD596E00262CD3 /* OrderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderList.swift; sourceTree = "<group>"; };
+		07AF93E324AEA3E700FC5906 /* Keyboarder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboarder.swift; sourceTree = "<group>"; };
 		07B1F26724ACE29C003E4C28 /* White Wines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "White Wines.swift"; sourceTree = "<group>"; };
 		07B1F26924ACE2A9003E4C28 /* Cocktails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktails.swift; sourceTree = "<group>"; };
 		07B1F26B24ACE2B5003E4C28 /* Tequilas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tequilas.swift; sourceTree = "<group>"; };
@@ -100,29 +64,11 @@
 		07C4AC7F24AB8CCF00847AE6 /* Drink List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drink List.swift"; sourceTree = "<group>"; };
 		07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Non-Alcoholic Drinks.swift"; sourceTree = "<group>"; };
 		07D5E80E24ABD6D30071FD1E /* Red Wines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Red Wines.swift"; sourceTree = "<group>"; };
-		07FCD0D324AE673900341507 /* Order from Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Order from Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		07FCD0D624AE673900341507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		07FCD0D824AE673E00341507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		07FCD0DA24AE673E00341507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07FCD0DF24AE673E00341507 /* Order from Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Order from Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		07FCD0E424AE673E00341507 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		07FCD0E624AE673E00341507 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
-		07FCD0E824AE673E00341507 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		07FCD0EA24AE674000341507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		07FCD0ED24AE674000341507 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		07FCD0EF24AE674000341507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FCD0FB24AE777800341507 /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0721E0DE24AA8C2000D56F93 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07FCD0DC24AE673E00341507 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -136,8 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				0721E0E324AA8C2000D56F93 /* Order a Drink */,
-				07FCD0D424AE673900341507 /* Order from Watch */,
-				07FCD0E324AE673E00341507 /* Order from Watch Extension */,
 				0721E0E224AA8C2000D56F93 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,8 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				0721E0E124AA8C2000D56F93 /* Order a Drink.app */,
-				07FCD0D324AE673900341507 /* Order from Watch.app */,
-				07FCD0DF24AE673E00341507 /* Order from Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,6 +104,7 @@
 				0721E0EA24AA8C2200D56F93 /* Assets.xcassets */,
 				0721E0EF24AA8C2200D56F93 /* LaunchScreen.storyboard */,
 				0721E0F224AA8C2200D56F93 /* Info.plist */,
+				07AF93E224AEA3B000FC5906 /* Dependancies */,
 				0721E0EC24AA8C2200D56F93 /* Preview Content */,
 			);
 			path = "Order a Drink";
@@ -173,6 +116,14 @@
 				0721E0ED24AA8C2200D56F93 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		07AF93E224AEA3B000FC5906 /* Dependancies */ = {
+			isa = PBXGroup;
+			children = (
+				07AF93E324AEA3E700FC5906 /* Keyboarder.swift */,
+			);
+			path = Dependancies;
 			sourceTree = "<group>";
 		};
 		07B1F26F24ACE3F5003E4C28 /* Delegates */ = {
@@ -219,37 +170,6 @@
 			path = "Sub-Sections";
 			sourceTree = "<group>";
 		};
-		07FCD0D424AE673900341507 /* Order from Watch */ = {
-			isa = PBXGroup;
-			children = (
-				07FCD0D524AE673900341507 /* Interface.storyboard */,
-				07FCD0D824AE673E00341507 /* Assets.xcassets */,
-				07FCD0DA24AE673E00341507 /* Info.plist */,
-			);
-			path = "Order from Watch";
-			sourceTree = "<group>";
-		};
-		07FCD0E324AE673E00341507 /* Order from Watch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				07FCD0E424AE673E00341507 /* ContentView.swift */,
-				07FCD0E624AE673E00341507 /* HostingController.swift */,
-				07FCD0E824AE673E00341507 /* ExtensionDelegate.swift */,
-				07FCD0EA24AE674000341507 /* Assets.xcassets */,
-				07FCD0EF24AE674000341507 /* Info.plist */,
-				07FCD0EC24AE674000341507 /* Preview Content */,
-			);
-			path = "Order from Watch Extension";
-			sourceTree = "<group>";
-		};
-		07FCD0EC24AE674000341507 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				07FCD0ED24AE674000341507 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,46 +185,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				07FCD0F124AE674000341507 /* PBXTargetDependency */,
 			);
 			name = "Order a Drink";
 			productName = "Order a Drink";
 			productReference = 0721E0E124AA8C2000D56F93 /* Order a Drink.app */;
 			productType = "com.apple.product-type.application";
-		};
-		07FCD0D224AE673900341507 /* Order from Watch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07FCD0F724AE674000341507 /* Build configuration list for PBXNativeTarget "Order from Watch" */;
-			buildPhases = (
-				07FCD0D124AE673900341507 /* Resources */,
-				07FCD0F624AE674000341507 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				07FCD0E224AE673E00341507 /* PBXTargetDependency */,
-			);
-			name = "Order from Watch";
-			productName = "Order from Watch";
-			productReference = 07FCD0D324AE673900341507 /* Order from Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		07FCD0DE24AE673E00341507 /* Order from Watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07FCD0F324AE674000341507 /* Build configuration list for PBXNativeTarget "Order from Watch Extension" */;
-			buildPhases = (
-				07FCD0DB24AE673E00341507 /* Sources */,
-				07FCD0DC24AE673E00341507 /* Frameworks */,
-				07FCD0DD24AE673E00341507 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Order from Watch Extension";
-			productName = "Order from Watch Extension";
-			productReference = 07FCD0DF24AE673E00341507 /* Order from Watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -317,12 +202,6 @@
 				ORGANIZATIONNAME = "Orange Inc.";
 				TargetAttributes = {
 					0721E0E024AA8C2000D56F93 = {
-						CreatedOnToolsVersion = 11.5;
-					};
-					07FCD0D224AE673900341507 = {
-						CreatedOnToolsVersion = 11.5;
-					};
-					07FCD0DE24AE673E00341507 = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
@@ -341,8 +220,6 @@
 			projectRoot = "";
 			targets = (
 				0721E0E024AA8C2000D56F93 /* Order a Drink */,
-				07FCD0D224AE673900341507 /* Order from Watch */,
-				07FCD0DE24AE673E00341507 /* Order from Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -355,24 +232,6 @@
 				0721E0F124AA8C2200D56F93 /* LaunchScreen.storyboard in Resources */,
 				0721E0EE24AA8C2200D56F93 /* Preview Assets.xcassets in Resources */,
 				0721E0EB24AA8C2200D56F93 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07FCD0D124AE673900341507 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07FCD0D924AE673E00341507 /* Assets.xcassets in Resources */,
-				07FCD0D724AE673900341507 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07FCD0DD24AE673E00341507 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07FCD0EE24AE674000341507 /* Preview Assets.xcassets in Resources */,
-				07FCD0EB24AE674000341507 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,34 +257,12 @@
 				0721E0E924AA8C2000D56F93 /* ContentView.swift in Sources */,
 				07B1F27724ACE654003E4C28 /* OrderContentView.swift in Sources */,
 				07D5E80F24ABD6D30071FD1E /* Red Wines.swift in Sources */,
+				07AF93E424AEA3E700FC5906 /* Keyboarder.swift in Sources */,
 				07C4AC8024AB8CCF00847AE6 /* Drink List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07FCD0DB24AE673E00341507 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07FCD0E724AE673E00341507 /* HostingController.swift in Sources */,
-				07FCD0E524AE673E00341507 /* ContentView.swift in Sources */,
-				07FCD0E924AE673E00341507 /* ExtensionDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		07FCD0E224AE673E00341507 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 07FCD0DE24AE673E00341507 /* Order from Watch Extension */;
-			targetProxy = 07FCD0E124AE673E00341507 /* PBXContainerItemProxy */;
-		};
-		07FCD0F124AE674000341507 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 07FCD0D224AE673900341507 /* Order from Watch */;
-			targetProxy = 07FCD0F024AE674000341507 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0721E0EF24AA8C2200D56F93 /* LaunchScreen.storyboard */ = {
@@ -434,14 +271,6 @@
 				0721E0F024AA8C2200D56F93 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		07FCD0D524AE673900341507 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07FCD0D624AE673900341507 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -566,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Order a Drink/Preview Content\"";
 				DEVELOPMENT_TEAM = 7PDHA6MK35;
 				ENABLE_PREVIEWS = YES;
@@ -588,7 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Order a Drink/Preview Content\"";
 				DEVELOPMENT_TEAM = 7PDHA6MK35;
 				ENABLE_PREVIEWS = YES;
@@ -602,96 +431,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		07FCD0F424AE674000341507 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_ASSET_PATHS = "\"Order from Watch Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 7PDHA6MK35;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Order from Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Orange-Inc.Order-a-Drink.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		07FCD0F524AE674000341507 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_ASSET_PATHS = "\"Order from Watch Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 7PDHA6MK35;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Order from Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Orange-Inc.Order-a-Drink.watchkitapp.watchkitextension";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Release;
-		};
-		07FCD0F824AE674000341507 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = 7PDHA6MK35;
-				IBSC_MODULE = Order_from_Watch_Extension;
-				INFOPLIST_FILE = "Order from Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Orange-Inc.Order-a-Drink.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		07FCD0F924AE674000341507 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
-				DEVELOPMENT_TEAM = 7PDHA6MK35;
-				IBSC_MODULE = Order_from_Watch_Extension;
-				INFOPLIST_FILE = "Order from Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Orange-Inc.Order-a-Drink.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
@@ -712,24 +451,6 @@
 			buildConfigurations = (
 				0721E0F624AA8C2200D56F93 /* Debug */,
 				0721E0F724AA8C2200D56F93 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		07FCD0F324AE674000341507 /* Build configuration list for PBXNativeTarget "Order from Watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07FCD0F424AE674000341507 /* Debug */,
-				07FCD0F524AE674000341507 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		07FCD0F724AE674000341507 /* Build configuration list for PBXNativeTarget "Order from Watch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07FCD0F824AE674000341507 /* Debug */,
-				07FCD0F924AE674000341507 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

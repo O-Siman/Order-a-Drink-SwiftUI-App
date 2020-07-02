@@ -9,10 +9,14 @@
 import SwiftUI
 
 struct ConfirmView: View {
-    @State var name: String = "Name"
+    @ObservedObject private var keyboard = KeyboardResponder()
+    
+    @State var name: String = ""
     @State private var selectedTransport = 0
+    @State private var iceBool = false
     @State private var showingAlert = false
     @State private var alertVar: Alert?
+    
     @Binding var viewIsPresented: Bool
     
     var body: some View {
@@ -27,22 +31,31 @@ struct ConfirmView: View {
                         .frame(width: 300, height: 300)
                 }
                 Section(header: Text("ORDER")) {
-                    TextField("Name", text: $name)
-                    //We want nothing to be picked by default below
+                    TextField("Enter your Name", text: $name)
+                    Toggle(isOn: $iceBool) {
+                        Text("Ice")
+                    }
                     Picker(selection: $selectedTransport, label: Text("Choose a way to get your drink")) {
                         Text("Pickup").tag(1)
                         Text("Delivery").tag(2)
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
+                
+                //MARK: Submit Button
                 Button(action: {
+                    //Will show alert every time it's pressed
                     self.showingAlert = true
                     if self.selectedTransport < 1 {
-                        self.alertVar = Alert(title: Text(""), message: Text("Please select pickup or delivery"), dismissButton: .default(Text("Got it!")))
+                        self.alertVar = Alert(title: Text(""), message: Text("Please select pickup or delivery."), dismissButton: .default(Text("Got it!")))
                     } else {
+                        if self.name == "" {
+                            self.alertVar = Alert(title: Text(""), message: Text("Please type in your name."), dismissButton: .default(Text("Got it!")))
+                        } else {
                         self.alertVar = Alert(title: Text("Submitted!"), message: Text("Yay"), dismissButton: .default(Text("Got it!")) {
                                 self.viewIsPresented = false
                             })
+                        }
                     }
                 }) {
                     Text("Place Order")
@@ -51,7 +64,15 @@ struct ConfirmView: View {
                     (alertVar!)
             }
         .navigationBarTitle("New Order")
+        .navigationBarItems(leading:
+            Button("Cancel") {
+                self.viewIsPresented = false
+            }
+        )
         }
+            .padding(.bottom, keyboard.currentHeight)
+            .edgesIgnoringSafeArea(.bottom)
+            .animation(.easeOut(duration: 0.16))
     }
 }
 }
