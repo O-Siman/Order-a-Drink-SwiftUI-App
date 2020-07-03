@@ -52,6 +52,13 @@ struct ConfirmView: View {
                         if self.name == "" {
                             self.alertVar = Alert(title: Text(""), message: Text("Please type in your name."), dismissButton: .default(Text("Got it!")))
                         } else {
+                            //Get current orders (if nil, orders is []
+                            var currentOrders: Array = UserDefaults.standard.object(forKey: "orders") as? Array ?? []
+                            print("Current orders: \(currentOrders)")
+                            //Create a dictionary for the drink
+                            var newOrder = ["drink": globalDrink, "description": globalDescription, "image": globalImageName, "transport": self.selectedTransport, "ice": self.iceBool] as [String : Any]
+                            currentOrders.append(newOrder)
+                        UserDefaults.standard.set(currentOrders, forKey: "orders")
                         self.alertVar = Alert(title: Text("Submitted!"), message: Text("Yay"), dismissButton: .default(Text("Got it!")) {
                                 self.viewIsPresented = false
                             })

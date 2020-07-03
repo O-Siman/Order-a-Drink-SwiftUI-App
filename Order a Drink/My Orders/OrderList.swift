@@ -11,25 +11,47 @@ import Foundation
 import Combine
 
 class UserSettings: ObservableObject {
-    @Published var orders: Array<String> {
+//UserDefaults updates the View
+    @Published var orders: Array<Dictionary<String, Any>> {
+    //If the orders variable is changed, then set user defaults to that value.
         didSet {
             UserDefaults.standard.set(orders, forKey: "orders")
         }
     }
     
     init() {
-        self.orders = UserDefaults.standard.object(forKey: "orders") as? Array ?? ["hi", "hello"]
+        self.orders = (UserDefaults.standard.object(forKey: "orders") as? Array) ?? []
     }
 }
 
-func makeList() -> some View {
-    let userOrders = UserSettings().orders
+struct DrinkItem: Identifiable {
+    var id = UUID()
     
-    return List(userOrders, id: \.self) { order in
-        Image("PlaceholderImage")
-        Text(order)
+    var drinkName: String
+    var drinkImage: String
+}
+
+func makeList() -> some View {
+    
+    let userOrders: Array<Dictionary> = UserSettings().orders
+    
+    // var drinkNames: Array<String>
+    // var drinkImages: Array<String>
+    
+    var drinkItems: [DrinkItem] = []
+    
+    for currentOrder: Dictionary in userOrders {
+        // drinkNames.append(currentOrder["drink"] as! String)
+        // drinkImages.append(currentOrder["image"] as! String)
+        drinkItems.append(DrinkItem(drinkName: currentOrder["drink"] as! String, drinkImage: currentOrder["image"] as! String))
     }
     
+    return List(drinkItems, id: \.drinkName) { currentDrink in
+        HStack {
+            Image(currentDrink.drinkImage)
+            Text(currentDrink.drinkName)
+        }
+    }
 }
 
 struct OrderList: View {
