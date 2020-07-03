@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ConfirmView: View {
     @ObservedObject private var keyboard = KeyboardResponder()
@@ -15,6 +16,8 @@ struct ConfirmView: View {
     @State private var selectedTransport = 0
     @State private var iceBool = false
     @State private var showingAlert = false
+    @State private var notifAlertShowing = false
+    @State private var notifAlertVar: Alert?
     @State private var alertVar: Alert?
     
     @Binding var viewIsPresented: Bool
@@ -44,8 +47,9 @@ struct ConfirmView: View {
                 
                 //MARK: Submit Button
                 Button(action: {
-                    //Will show alert every time it's pressed
+                    //Will show an alert no matter what happens below
                     self.showingAlert = true
+                    print("UserDefaults set to not ask about notifs anymore")
                     if self.selectedTransport < 1 {
                         self.alertVar = Alert(title: Text(""), message: Text("Please select pickup or delivery."), dismissButton: .default(Text("Got it!")))
                     } else {
@@ -77,11 +81,40 @@ struct ConfirmView: View {
             }
         )
         }
+            .alert(isPresented: $notifAlertShowing) {
+                (notifAlertVar!)
+            }
             .padding(.bottom, keyboard.currentHeight)
             .edgesIgnoringSafeArea(.bottom)
             .animation(.easeOut(duration: 0.16))
     }
+        //MARK: Push Notifications
+        .onAppear(perform: {
+            if (UserDefaults.standard.object(forKey: "push") != nil) {} else {
+            self.notifAlertShowing = true
+            print("Notif alert should show now")
+            self.notifAlertVar = Alert(title: Text("Push Notifications"), message: Text("Would you like to receive notifications when your order is ready?"), primaryButton: .default(Text("Yes!")) {
+                //Runs function to register for push notifications
+                registerForPushNotifications()
+            },
+                secondaryButton: .default(Text("No thanks")))
+        }
+        UserDefaults.standard.set(true, forKey: "push")
+            
+        DispatchQueue.main.async {
+          UIApplication.shared.registerForRemoteNotifications()
+        }
+        })
 }
+}
+
+//More notif functions
+func registerForPushNotifications() {
+  UNUserNotificationCenter.current() // 1
+    .requestAuthorization(options: [.alert, .sound, .badge]) { // 2
+      granted, error in
+      print("Permission granted: \(granted)") // 3
+  }
 }
 
 /* struct ConfirmView_Previews: PreviewProvider {

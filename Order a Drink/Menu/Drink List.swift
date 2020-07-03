@@ -28,8 +28,10 @@ struct List_Item: View {
                 Divider()
                 VStack(alignment: .leading) {
                     Text(name)
-                        .fontWeight(.bold)
+                        .fontWeight(.semibold)
+                        .font(.headline)
                     Text(description)
+                        .font(.subheadline)
                 }
                 Spacer()
             }
