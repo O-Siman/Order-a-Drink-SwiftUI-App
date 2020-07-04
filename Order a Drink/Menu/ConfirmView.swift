@@ -31,6 +31,7 @@ struct ConfirmView: View {
                     Text(globalDescription)
                     Image(globalImageName)
                         .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: 300, height: 300)
                 }
                 Section(header: Text("ORDER")) {
@@ -59,8 +60,10 @@ struct ConfirmView: View {
                             //Get current orders (if nil, orders is []
                             var currentOrders: Array = UserDefaults.standard.object(forKey: "orders") as? Array ?? []
                             print("Current orders: \(currentOrders)")
+                            //Get time and set it to a var
+                            let time = getCurrentTime()
                             //Create a dictionary for the drink
-                            var newOrder = ["drink": globalDrink, "description": globalDescription, "image": globalImageName, "transport": self.selectedTransport, "ice": self.iceBool] as [String : Any]
+                            let newOrder = ["drink": globalDrink, "description": globalDescription, "image": globalImageName, "transport": self.selectedTransport, "ice": self.iceBool, "time": time] as [String : Any]
                             currentOrders.append(newOrder)
                         UserDefaults.standard.set(currentOrders, forKey: "orders")
                         self.alertVar = Alert(title: Text("Submitted!"), message: Text("Yay"), dismissButton: .default(Text("Got it!")) {
@@ -106,6 +109,14 @@ struct ConfirmView: View {
         }
         })
 }
+}
+
+func getCurrentTime() -> String {
+    let currentDateTime = Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "h:mm a"
+    
+    return formatter.string(from: currentDateTime)
 }
 
 //More notif functions

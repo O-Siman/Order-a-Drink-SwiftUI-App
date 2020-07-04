@@ -18,7 +18,9 @@ struct TestView: View {
                         .font(.headline)
                     Text("Juicy lemonade that sparkles!")
                         .font(.subheadline)
+                    Divider()
                     Text("Ordered at 8:52 PM")
+                        .font(.subheadline)
                 }
                 Spacer()
                 Image("SparklingLemonade")

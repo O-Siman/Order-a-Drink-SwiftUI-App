@@ -29,7 +29,12 @@ struct DrinkItem: Identifiable {
     
     var drinkName: String
     var drinkImage: String
+    var drinkDescription: String
+    var transportation: String
+    var time: String
 }
+
+var drinkItems: [DrinkItem] = []
 
 func makeList() -> some View {
     
@@ -38,26 +43,75 @@ func makeList() -> some View {
     // var drinkNames: Array<String>
     // var drinkImages: Array<String>
     
-    var drinkItems: [DrinkItem] = []
+    var transportString: String
     
     for currentOrder: Dictionary in userOrders {
         // drinkNames.append(currentOrder["drink"] as! String)
         // drinkImages.append(currentOrder["image"] as! String)
-        drinkItems.append(DrinkItem(drinkName: currentOrder["drink"] as! String, drinkImage: currentOrder["image"] as! String))
+        if currentOrder["transport"] as! Int == 1 {
+            transportString = "Pickup"
+            print("Setting pickup")
+        } else if currentOrder["transport"] as! Int == 2 {
+            transportString = "Delivery"
+            print("Setting delivery")
+        } else {
+            transportString = "Unknown"
+        }
+        print("Transport is \(currentOrder["transport"] ?? "Unknown")")
+        
+        drinkItems.append(DrinkItem(drinkName: currentOrder["drink"] as! String, drinkImage: currentOrder["image"] as! String, drinkDescription: currentOrder["description"] as! String, transportation: transportString, time: currentOrder["time"] as! String))
+        
+        print("drinkItems is \(drinkItems)")
     }
     
-    return List(drinkItems, id: \.drinkName) { currentDrink in
-        HStack {
-            Image(currentDrink.drinkImage)
-            Text(currentDrink.drinkName)
+    return listView()
+        
+}
+
+struct listView: View {
+    
+    @State var showingDetail = false
+    
+    var body: some View {
+        List(drinkItems, id: \.id) { currentDrink in
+            Button(action: {self.showingDetail.toggle()}) {
+                HStack {
+                VStack(alignment: .leading) {
+                    Text(currentDrink.drinkName)
+                        .fontWeight(.semibold)
+                        .font(.headline)
+                    Text(currentDrink.drinkDescription)
+                        .font(.subheadline)
+                    Spacer()
+                    Divider()
+                    Text("Ordered at \(currentDrink.time)")
+                        .font(.subheadline)
+                    Text("Transportation: \(currentDrink.transportation)")
+                        .font(.subheadline)
+                }
+                Spacer()
+                Image(currentDrink.drinkImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(15)
+                    .shadow(radius: 5)
+                }
+            }
+            .sheet(isPresented: self.$showingDetail) {
+                ConfirmView(viewIsPresented: self.$showingDetail)
+            }
         }
     }
 }
 
 struct OrderList: View {
     
+    @State var showingDetail = false
+    
     var body: some View {
         makeList()
+        
     }
 }
 

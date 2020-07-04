@@ -36,9 +36,6 @@ struct Detail_Item: View {
         .sheet(isPresented: $showingDetail) {
             ConfirmView(viewIsPresented: self.$showingDetail)
         }
-        .onAppear {
-            print("ContentView appeared!")
-        }
     }
 }
 
@@ -48,6 +45,7 @@ struct Non_Alcoholic_Drinks: View {
     var body: some View {
         List {
             Detail_Item(drink: "Sparkling Lemonade", description: "Lemonade that sparkles!", imageName: "SparklingLemonade", showingDetail: false)
+            Detail_Item(drink: "Awesome Juice", description: "Juice again, really dumball...", imageName: "JuicyJ", showingDetail: false)
             /*
             Text("Sparkling Lemonade")
             Text("Classic Lemonade")
