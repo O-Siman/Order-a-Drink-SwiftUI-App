@@ -63,10 +63,11 @@ struct ConfirmView: View {
                             //Get time and set it to a var
                             let time = getCurrentTime()
                             //Create a dictionary for the drink
-                            let newOrder = ["drink": globalDrink, "description": globalDescription, "image": globalImageName, "transport": self.selectedTransport, "ice": self.iceBool, "time": time] as [String : Any]
+                            let newOrder = ["drink": globalDrink, "description": globalDescription, "image": globalImageName, "transport": self.selectedTransport, "ice": self.iceBool, "time": time, "name": self.name] as [String : Any]
                             currentOrders.append(newOrder)
+                            print("Current orders after appending: \(currentOrders)")
                         UserDefaults.standard.set(currentOrders, forKey: "orders")
-                        self.alertVar = Alert(title: Text("Submitted!"), message: Text("Yay"), dismissButton: .default(Text("Got it!")) {
+                        self.alertVar = Alert(title: Text("Order Placed!"), message: Text("Check the orders tab for more information."), dismissButton: .default(Text("Got it!")) {
                                 self.viewIsPresented = false
                             })
                         }

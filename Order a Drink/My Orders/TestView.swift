@@ -12,23 +12,26 @@ struct TestView: View {
     var body: some View {
         List {
             HStack {
-                VStack(alignment: .leading) {
-                    Text("Sparkling Lemonade")
-                        .fontWeight(.semibold)
-                        .font(.headline)
-                    Text("Juicy lemonade that sparkles!")
-                        .font(.subheadline)
-                    Divider()
-                    Text("Ordered at 8:52 PM")
-                        .font(.subheadline)
-                }
+            VStack(alignment: .leading) {
+                Text("Juice")
+                    .fontWeight(.semibold)
+                    .font(.headline)
+                Text("juicyJ.drinkDescription")
+                    .font(.subheadline)
                 Spacer()
-                Image("SparklingLemonade")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(15)
-                    .shadow(radius: 5)
+                Divider()
+                Text("Ordered at now")
+                    .font(.subheadline)
+                Text("Transportation: train")
+                    .font(.subheadline)
+            }
+            Spacer()
+            Image("JuicyJ")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 100)
+                .cornerRadius(15)
+                .shadow(radius: 5)
             }
         }
     }

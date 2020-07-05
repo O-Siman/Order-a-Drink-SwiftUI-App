@@ -12,12 +12,7 @@ import Combine
 
 class UserSettings: ObservableObject {
 //UserDefaults updates the View
-    @Published var orders: Array<Dictionary<String, Any>> {
-    //If the orders variable is changed, then set user defaults to that value.
-        didSet {
-            UserDefaults.standard.set(orders, forKey: "orders")
-        }
-    }
+    @Published var orders: Array<Dictionary<String, Any>>
     
     init() {
         self.orders = (UserDefaults.standard.object(forKey: "orders") as? Array) ?? []
@@ -30,24 +25,24 @@ struct DrinkItem: Identifiable {
     var drinkName: String
     var drinkImage: String
     var drinkDescription: String
-    var transportation: String
+    var transportationString: String
+    var transportationInt: Int
     var time: String
+    var name: String
+    var ice: Bool
 }
 
 var drinkItems: [DrinkItem] = []
 
 func makeList() -> some View {
     
-    let userOrders: Array<Dictionary> = UserSettings().orders
+    drinkItems = []
     
-    // var drinkNames: Array<String>
-    // var drinkImages: Array<String>
+    let userOrders: Array<Dictionary> = UserSettings().orders
     
     var transportString: String
     
     for currentOrder: Dictionary in userOrders {
-        // drinkNames.append(currentOrder["drink"] as! String)
-        // drinkImages.append(currentOrder["image"] as! String)
         if currentOrder["transport"] as! Int == 1 {
             transportString = "Pickup"
             print("Setting pickup")
@@ -59,18 +54,22 @@ func makeList() -> some View {
         }
         print("Transport is \(currentOrder["transport"] ?? "Unknown")")
         
-        drinkItems.append(DrinkItem(drinkName: currentOrder["drink"] as! String, drinkImage: currentOrder["image"] as! String, drinkDescription: currentOrder["description"] as! String, transportation: transportString, time: currentOrder["time"] as! String))
+        drinkItems.append(DrinkItem(drinkName: currentOrder["drink"] as! String, drinkImage: currentOrder["image"] as! String, drinkDescription: currentOrder["description"] as! String, transportationString: transportString, transportationInt: currentOrder["transport"] as! Int, time: currentOrder["time"] as! String, name: currentOrder["name"] as! String, ice: currentOrder["ice"] as! Bool))
         
-        print("drinkItems is \(drinkItems)")
+        // print("drinkItems is \(drinkItems)")
+        // Just use breakpoints, dummy
     }
     
-    return listView()
+    return listView(transportInt: 0, bindingName: "Unknown Name", bindingIce: false)
         
 }
 
 struct listView: View {
     
     @State var showingDetail = false
+    @State var transportInt: Int
+    @State var bindingName: String
+    @State var bindingIce: Bool
     
     var body: some View {
         List(drinkItems, id: \.id) { currentDrink in
@@ -86,24 +85,57 @@ struct listView: View {
                     Divider()
                     Text("Ordered at \(currentDrink.time)")
                         .font(.subheadline)
-                    Text("Transportation: \(currentDrink.transportation)")
+                    Text("Transportation: \(currentDrink.transportationString)")
                         .font(.subheadline)
                 }
                 Spacer()
                 Image(currentDrink.drinkImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
+                    .frame(maxWidth: 100)
                     .cornerRadius(15)
                     .shadow(radius: 5)
                 }
             }
             .sheet(isPresented: self.$showingDetail) {
-                ConfirmView(viewIsPresented: self.$showingDetail)
+                Form {
+                Section(header: Text("DRINK")) {
+                    Text(currentDrink.drinkName)
+                        .font(.headline)
+                    Text(currentDrink.drinkDescription)
+                    Image(currentDrink.drinkImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 300, height: 300)
+                }
+                Section(header: Text("ORDER")) {
+                    TextField("Name", text: (self.$bindingName))
+                    Toggle(isOn: (self.$bindingIce)) {
+                        Text("Ice")
+                    }
+                    Picker(selection: self.$transportInt, label: Text("Choose a way to get your drink")) {
+                        Text("Pickup").tag(1)
+                        Text("Delivery").tag(2)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                    .onAppear(perform: {
+                        self.bindingName = currentDrink.name
+                        self.bindingIce = currentDrink.ice
+                        self.transportInt = currentDrink.transportationInt
+                    })
             }
         }
     }
 }
+}
+
+/* func ClearList() -> some View {
+    return List {
+        Text("Hi")
+    }
+}
+ */
 
 struct OrderList: View {
     
@@ -111,7 +143,6 @@ struct OrderList: View {
     
     var body: some View {
         makeList()
-        
     }
 }
 
