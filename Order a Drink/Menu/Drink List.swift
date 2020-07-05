@@ -32,6 +32,7 @@ struct List_Item: View {
                         .font(.headline)
                     Text(description)
                         .font(.subheadline)
+                        .foregroundColor(.secondary)
                 }
                 Spacer()
             }

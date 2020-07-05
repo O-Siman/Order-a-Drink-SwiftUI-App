@@ -32,7 +32,8 @@ struct ConfirmView: View {
                     Image(globalImageName)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 300, height: 300)
+                        .frame(maxWidth: 300)
+                        .cornerRadius(20)
                 }
                 Section(header: Text("ORDER")) {
                     TextField("Enter your Name", text: $name)
@@ -50,7 +51,7 @@ struct ConfirmView: View {
                 Button(action: {
                     //Will show an alert no matter what happens below
                     self.showingAlert = true
-                    print("UserDefaults set to not ask about notifs anymore")
+
                     if self.selectedTransport < 1 {
                         self.alertVar = Alert(title: Text(""), message: Text("Please select pickup or delivery."), dismissButton: .default(Text("Got it!")))
                     } else {
@@ -97,11 +98,11 @@ struct ConfirmView: View {
             if (UserDefaults.standard.object(forKey: "push") != nil) {} else {
             self.notifAlertShowing = true
             print("Notif alert should show now")
-            self.notifAlertVar = Alert(title: Text("Push Notifications"), message: Text("Would you like to receive notifications when your order is ready?"), primaryButton: .default(Text("Yes!")) {
-                //Runs function to register for push notifications
+            self.notifAlertVar = Alert(title: Text("Push Notifications"), message: Text("Would you like to receive notifications when your order is ready?"), primaryButton: .default(Text("No thanks")),
+               secondaryButton: .default(Text("Yes!")) {
+                // Runs function to register for push notifications
                 registerForPushNotifications()
-            },
-                secondaryButton: .default(Text("No thanks")))
+            })
         }
         UserDefaults.standard.set(true, forKey: "push")
             

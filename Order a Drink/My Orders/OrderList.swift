@@ -85,8 +85,10 @@ struct listView: View {
                     Divider()
                     Text("Ordered at \(currentDrink.time)")
                         .font(.subheadline)
+                        .foregroundColor(.secondary)
                     Text("Transportation: \(currentDrink.transportationString)")
                         .font(.subheadline)
+                        .foregroundColor(.secondary)
                 }
                 Spacer()
                 Image(currentDrink.drinkImage)
@@ -97,45 +99,56 @@ struct listView: View {
                     .shadow(radius: 5)
                 }
             }
+            //MARK: Receipt Sheet
             .sheet(isPresented: self.$showingDetail) {
-                Form {
-                Section(header: Text("DRINK")) {
-                    Text(currentDrink.drinkName)
-                        .font(.headline)
-                    Text(currentDrink.drinkDescription)
-                    Image(currentDrink.drinkImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 300, height: 300)
-                }
-                Section(header: Text("ORDER")) {
-                    TextField("Name", text: (self.$bindingName))
-                    Toggle(isOn: (self.$bindingIce)) {
-                        Text("Ice")
+                NavigationView {
+                    Form {
+                    Section(header: Text("DRINK")) {
+                        Text(currentDrink.drinkName)
+                            .font(.headline)
+                        Text(currentDrink.drinkDescription)
+                        Image(currentDrink.drinkImage)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 300)
+                            .cornerRadius(20)
                     }
-                    Picker(selection: self.$transportInt, label: Text("Choose a way to get your drink")) {
-                        Text("Pickup").tag(1)
-                        Text("Delivery").tag(2)
+                    Section(header: Text("ORDER")) {
+                        TextField("Name", text: (self.$bindingName))
+                            .disabled(true)
+                        //Disabled because it's the receipt
+                        Toggle(isOn: (self.$bindingIce)) {
+                            Text("Ice")
+                        }
+                            .disabled(true)
+                        //Disabled because it's the receipt
+                        Picker(selection: self.$transportInt, label: Text("Choose a way to get your drink")) {
+                            Text("Pickup").tag(1)
+                            Text("Delivery").tag(2)
+                        }
+                            .pickerStyle(SegmentedPickerStyle())
+                            .disabled(true)
+                        Text("Ordered at \(currentDrink.time)")
+                        //Disabled because it's the receipt
                     }
-                    .pickerStyle(SegmentedPickerStyle())
+                        .onAppear(perform: {
+                            self.bindingName = "Order for: \(currentDrink.name)"
+                            self.bindingIce = currentDrink.ice
+                            self.transportInt = currentDrink.transportationInt
+                        })
+                    }
+                .navigationBarTitle("Receipt")
+                .navigationBarItems(leading:
+                    Button("Close") {
+                        self.showingDetail = false
+                    }
+                )
                 }
-                    .onAppear(perform: {
-                        self.bindingName = currentDrink.name
-                        self.bindingIce = currentDrink.ice
-                        self.transportInt = currentDrink.transportationInt
-                    })
-            }
         }
+        //End receipt
     }
 }
 }
-
-/* func ClearList() -> some View {
-    return List {
-        Text("Hi")
-    }
-}
- */
 
 struct OrderList: View {
     

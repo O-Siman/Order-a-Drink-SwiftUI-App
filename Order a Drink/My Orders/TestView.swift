@@ -13,20 +13,22 @@ struct TestView: View {
         List {
             HStack {
             VStack(alignment: .leading) {
-                Text("Juice")
+                Text("Drink Name")
                     .fontWeight(.semibold)
                     .font(.headline)
-                Text("juicyJ.drinkDescription")
+                Text("Drink Desc")
                     .font(.subheadline)
                 Spacer()
                 Divider()
-                Text("Ordered at now")
+                Text("Ordered at time")
                     .font(.subheadline)
+                    .foregroundColor(.secondary)
                 Text("Transportation: train")
-                    .font(.subheadline)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
             }
             Spacer()
-            Image("JuicyJ")
+            Image("SparklingLemonade")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 100)

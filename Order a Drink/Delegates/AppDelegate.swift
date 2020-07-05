@@ -8,13 +8,20 @@
 
 import UIKit
 import UserNotifications
+import PushNotifications
+
+let pushNotifications = PushNotifications.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        pushNotifications.start(instanceId: "00f10527-2b64-4445-bd1b-351f48c92a9b")
+        // self.pushNotifications.registerForRemoteNotifications()
+        
+        // try? pushNotifications.addDeviceInterest(interest: "hello")
+        
         // Override point for customization after application launch.
         return true
     }
@@ -34,28 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     //MARK: Push Notifications
-    func application(
-        _ application: UIApplication,
-        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
-        ) {
-        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-        let token = tokenParts.joined()
-        
-        if !token.isEmpty {
-            
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(token, forKey: "newToken")
-
-        }
-        
-
-        print("Device Token: \(token)")
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+       pushNotifications.registerDeviceToken(deviceToken)
     }
 
     func application(
         _ application: UIApplication,
         didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Failed to register: \(error)")
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+       print(userInfo)
     }
 
 

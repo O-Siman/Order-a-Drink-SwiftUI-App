@@ -28,6 +28,7 @@
 		07D5E80D24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */; };
 		07D5E80F24ABD6D30071FD1E /* Red Wines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5E80E24ABD6D30071FD1E /* Red Wines.swift */; };
 		07FCD0FC24AE777800341507 /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCD0FB24AE777800341507 /* ConfirmView.swift */; };
+		296DA62F3265A87F8E6FE03E /* libPods-Order a Drink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAA44BDE01498604FC8C4EE /* libPods-Order a Drink.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +69,9 @@
 		07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Non-Alcoholic Drinks.swift"; sourceTree = "<group>"; };
 		07D5E80E24ABD6D30071FD1E /* Red Wines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Red Wines.swift"; sourceTree = "<group>"; };
 		07FCD0FB24AE777800341507 /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
+		9CAA44BDE01498604FC8C4EE /* libPods-Order a Drink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Order a Drink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8090D1903D63AEFEB715D44 /* Pods-Order a Drink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Order a Drink.debug.xcconfig"; path = "Target Support Files/Pods-Order a Drink/Pods-Order a Drink.debug.xcconfig"; sourceTree = "<group>"; };
+		D674EA0C5D3D050ADB075B3A /* Pods-Order a Drink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Order a Drink.release.xcconfig"; path = "Target Support Files/Pods-Order a Drink/Pods-Order a Drink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296DA62F3265A87F8E6FE03E /* libPods-Order a Drink.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +91,8 @@
 			children = (
 				0721E0E324AA8C2000D56F93 /* Order a Drink */,
 				0721E0E224AA8C2000D56F93 /* Products */,
+				B9AF15E6D91BE4A3A5401266 /* Pods */,
+				91ADAB0C8499436C0563ED58 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +182,24 @@
 			path = "Sub-Sections";
 			sourceTree = "<group>";
 		};
+		91ADAB0C8499436C0563ED58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CAA44BDE01498604FC8C4EE /* libPods-Order a Drink.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9AF15E6D91BE4A3A5401266 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8090D1903D63AEFEB715D44 /* Pods-Order a Drink.debug.xcconfig */,
+				D674EA0C5D3D050ADB075B3A /* Pods-Order a Drink.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0721E0F524AA8C2200D56F93 /* Build configuration list for PBXNativeTarget "Order a Drink" */;
 			buildPhases = (
+				7CF55E1751EA6D2CEC06B447 /* [CP] Check Pods Manifest.lock */,
 				0721E0DD24AA8C2000D56F93 /* Sources */,
 				0721E0DE24AA8C2000D56F93 /* Frameworks */,
 				0721E0DF24AA8C2000D56F93 /* Resources */,
@@ -241,6 +267,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CF55E1751EA6D2CEC06B447 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Order a Drink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0721E0DD24AA8C2000D56F93 /* Sources */ = {
@@ -398,11 +449,12 @@
 		};
 		0721E0F624AA8C2200D56F93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8090D1903D63AEFEB715D44 /* Pods-Order a Drink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Order a Drink/Order a Drink.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Order a Drink/Preview Content\"";
 				DEVELOPMENT_TEAM = 7PDHA6MK35;
 				ENABLE_PREVIEWS = YES;
@@ -421,11 +473,12 @@
 		};
 		0721E0F724AA8C2200D56F93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D674EA0C5D3D050ADB075B3A /* Pods-Order a Drink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Order a Drink/Order a Drink.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Order a Drink/Preview Content\"";
 				DEVELOPMENT_TEAM = 7PDHA6MK35;
 				ENABLE_PREVIEWS = YES;
