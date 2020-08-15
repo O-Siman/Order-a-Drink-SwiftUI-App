@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0714273D24AB896300562D18 /* Drinks Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0714273C24AB896300562D18 /* Drinks Splash.swift */; };
+		0720FF9224C600CD006A4B30 /* Specific Drink Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720FF9124C600CD006A4B30 /* Specific Drink Template.swift */; };
 		0721E0E524AA8C2000D56F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721E0E424AA8C2000D56F93 /* AppDelegate.swift */; };
 		0721E0E724AA8C2000D56F93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721E0E624AA8C2000D56F93 /* SceneDelegate.swift */; };
 		0721E0E924AA8C2000D56F93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721E0E824AA8C2000D56F93 /* ContentView.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		0714273C24AB896300562D18 /* Drinks Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drinks Splash.swift"; sourceTree = "<group>"; };
+		0720FF9124C600CD006A4B30 /* Specific Drink Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Specific Drink Template.swift"; sourceTree = "<group>"; };
 		0721E0E124AA8C2000D56F93 /* Order a Drink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Order a Drink.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0721E0E424AA8C2000D56F93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0721E0E624AA8C2000D56F93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				0721E0E824AA8C2000D56F93 /* ContentView.swift */,
 				0714273C24AB896300562D18 /* Drinks Splash.swift */,
 				07C4AC7F24AB8CCF00847AE6 /* Drink List.swift */,
+				0720FF9124C600CD006A4B30 /* Specific Drink Template.swift */,
 				07D5E80B24ABB99D0071FD1E /* Sub-Sections */,
 				07FCD0FB24AE777800341507 /* ConfirmView.swift */,
 			);
@@ -172,12 +175,12 @@
 		07D5E80B24ABB99D0071FD1E /* Sub-Sections */ = {
 			isa = PBXGroup;
 			children = (
-				07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */,
+				07B1F26924ACE2A9003E4C28 /* Cocktails.swift */,
 				07D5E80E24ABD6D30071FD1E /* Red Wines.swift */,
 				07B1F26724ACE29C003E4C28 /* White Wines.swift */,
-				07B1F26924ACE2A9003E4C28 /* Cocktails.swift */,
-				07B1F26B24ACE2B5003E4C28 /* Tequilas.swift */,
 				07B1F26D24ACE2C2003E4C28 /* Sparkling Wines.swift */,
+				07B1F26B24ACE2B5003E4C28 /* Tequilas.swift */,
+				07D5E80C24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift */,
 			);
 			path = "Sub-Sections";
 			sourceTree = "<group>";
@@ -196,7 +199,6 @@
 				B8090D1903D63AEFEB715D44 /* Pods-Order a Drink.debug.xcconfig */,
 				D674EA0C5D3D050ADB075B3A /* Pods-Order a Drink.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +310,7 @@
 				07D5E80D24ABB9BF0071FD1E /* Non-Alcoholic Drinks.swift in Sources */,
 				07B1F26A24ACE2A9003E4C28 /* Cocktails.swift in Sources */,
 				07B1F26824ACE29C003E4C28 /* White Wines.swift in Sources */,
+				0720FF9224C600CD006A4B30 /* Specific Drink Template.swift in Sources */,
 				0714273D24AB896300562D18 /* Drinks Splash.swift in Sources */,
 				07B1F26E24ACE2C2003E4C28 /* Sparkling Wines.swift in Sources */,
 				07B1F27124ACE435003E4C28 /* AppView.swift in Sources */,

@@ -52,7 +52,6 @@ func makeList() -> some View {
         } else {
             transportString = "Unknown"
         }
-        print("Transport is \(currentOrder["transport"] ?? "Unknown")")
         
         drinkItems.append(DrinkItem(drinkName: currentOrder["drink"] as! String, drinkImage: currentOrder["image"] as! String, drinkDescription: currentOrder["description"] as! String, transportationString: transportString, transportationInt: currentOrder["transport"] as! Int, time: currentOrder["time"] as! String, name: currentOrder["name"] as! String, ice: currentOrder["ice"] as! Bool))
         
@@ -79,7 +78,9 @@ struct listView: View {
                     Text(currentDrink.drinkName)
                         .fontWeight(.semibold)
                         .font(.headline)
-                    Text(currentDrink.drinkDescription)
+//                    Text(currentDrink.drinkDescription)
+//                        .font(.subheadline)
+                    Text("Order for \(currentDrink.name)")
                         .font(.subheadline)
                     Spacer()
                     Divider()

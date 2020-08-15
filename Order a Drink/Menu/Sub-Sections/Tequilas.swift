@@ -10,7 +10,11 @@ import SwiftUI
 
 struct Tequilas: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Detail_Item(drink: "Jose Cuervo Especial Tequila Reposado", description: "This “Especial” Tequila is “reposado,” meaning that it was aged in oak for a period of two months to twelve months!", imageName: "JoseCuervoEspecialTequilaReposado", showingDetail: false)
+            Detail_Item(drink: "El Padrino Tequila Blanco", description: "This is a classic white tequila. It’s perfect for cocktails or shots!", imageName: "ElPadrinoTequilaBlanco", showingDetail: false)
+        }
+        .navigationBarTitle("Tequilas")
     }
 }
 

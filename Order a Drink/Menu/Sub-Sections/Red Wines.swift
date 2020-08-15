@@ -10,7 +10,10 @@ import SwiftUI
 
 struct Red_Wines: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Detail_Item(drink: "Chianti Classico", description: "This dry and fruity wine is perfect with its red cherry and plum aromas. It’s fresh and elegant, everything you would want in a wine.", imageName: "ChiantiClassico", showingDetail: false)
+        }
+        .navigationBarTitle("Red Wines")
     }
 }
 

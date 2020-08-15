@@ -47,12 +47,12 @@ struct Drink_List: View {
     var body: some View {
         NavigationView {
                 List {
+                    List_Item(name: "Cocktails", description: "10-15 minutes", image: "Cocktail", sheetView: AnyView(Cocktails()))
+                    List_Item(name: "Red Wines", description: "3-5 minutes", image: "RedWine", sheetView: AnyView(Red_Wines()))
+                    List_Item(name: "White Wines", description: "4-6 minutes", image: "WhiteWine", sheetView: AnyView(White_Wines()))
+                    List_Item(name: "Sparkling Wines", description: "4-6 minutes", image: "SparklingWine", sheetView: AnyView(Sparkling_Wines()))
+                    List_Item(name: "Tequilas", description: "2-3 minutes", image: "Tequila", sheetView: AnyView(Tequilas()))
                     List_Item(name: "Non-Alcoholic Drinks", description: "2-3 minutes", image: "NonAlco", sheetView: AnyView(Non_Alcoholic_Drinks()))
-                    List_Item(name: "Red Wines", description: "4-7 minutes", image: "RedWine", sheetView: AnyView(Red_Wines()))
-                    List_Item(name: "White Wines", description: "5-8 minutes", image: "WhiteWine", sheetView: AnyView(Red_Wines()))
-                    List_Item(name: "Cocktails", description: "4-7 minutes", image: "Cocktail", sheetView: AnyView(Red_Wines()))
-                    List_Item(name: "Tequilas", description: "3-6 minutes", image: "Tequila", sheetView: AnyView(Red_Wines()))
-                    List_Item(name: "Sparkling Wines", description: "4-8 minutes", image: "SparklingWine", sheetView: AnyView(Red_Wines()))
                 }
         }
     }

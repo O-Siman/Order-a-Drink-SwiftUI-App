@@ -7,7 +7,9 @@
 //
 
 import SwiftUI
+import Alamofire
 import UserNotifications
+import PushNotifications
 
 struct ConfirmView: View {
     @ObservedObject private var keyboard = KeyboardResponder()
@@ -60,17 +62,36 @@ struct ConfirmView: View {
                         } else {
                             //Get current orders (if nil, orders is []
                             var currentOrders: Array = UserDefaults.standard.object(forKey: "orders") as? Array ?? []
-                            print("Current orders: \(currentOrders)")
                             //Get time and set it to a var
                             let time = getCurrentTime()
                             //Create a dictionary for the drink
                             let newOrder = ["drink": globalDrink, "description": globalDescription, "image": globalImageName, "transport": self.selectedTransport, "ice": self.iceBool, "time": time, "name": self.name] as [String : Any]
-                            currentOrders.append(newOrder)
-                            print("Current orders after appending: \(currentOrders)")
-                        UserDefaults.standard.set(currentOrders, forKey: "orders")
-                        self.alertVar = Alert(title: Text("Order Placed!"), message: Text("Check the orders tab for more information."), dismissButton: .default(Text("Got it!")) {
-                                self.viewIsPresented = false
-                            })
+                            //Alert to say it's submitting
+                            self.alertVar = Alert(title: Text("Submitting..."))
+                            //Set up waiting
+                            let group = DispatchGroup()
+                            group.enter()
+                            DispatchQueue.main.async {
+                                uploadOrder(orderToUpload: newOrder) { (result) -> () in
+                                    if result != "Error" {
+                                        try? pushNotifications.addDeviceInterest(interest: result)
+                                        print("Added interest: " + result)
+                                        self.alertVar = Alert(title: Text("Order Placed!"), message: Text("Check the orders tab for more information."), dismissButton: .default(Text("Got it!")) {
+                                        self.viewIsPresented = false
+                                        })
+                                    } else {
+                                        self.alertVar = Alert(title: Text("Unable to submit order"), message: Text("Make sure you have an internet connection."), dismissButton: .default(Text("Got it!")) {
+                                        self.viewIsPresented = false
+                                        })
+                                    }
+                                }
+                                
+                                group.leave()
+                            }
+                            group.notify(queue: .main) {
+                                currentOrders.append(newOrder)
+                                UserDefaults.standard.set(currentOrders, forKey: "orders")
+                            }
                         }
                     }
                 }) {
@@ -78,7 +99,7 @@ struct ConfirmView: View {
                 }
                 .alert(isPresented: $showingAlert) {
                     (alertVar!)
-            }
+                }
         .navigationBarTitle("New Order")
         .navigationBarItems(leading:
             Button("Cancel") {
@@ -97,11 +118,12 @@ struct ConfirmView: View {
         .onAppear(perform: {
             if (UserDefaults.standard.object(forKey: "push") != nil) {} else {
             self.notifAlertShowing = true
-            print("Notif alert should show now")
             self.notifAlertVar = Alert(title: Text("Push Notifications"), message: Text("Would you like to receive notifications when your order is ready?"), primaryButton: .default(Text("No thanks")),
                secondaryButton: .default(Text("Yes!")) {
                 // Runs function to register for push notifications
                 registerForPushNotifications()
+                
+                pushNotifications.registerForRemoteNotifications()
             })
         }
         UserDefaults.standard.set(true, forKey: "push")
@@ -128,6 +150,32 @@ func registerForPushNotifications() {
       granted, error in
       print("Permission granted: \(granted)") // 3
   }
+}
+
+func uploadOrder(orderToUpload: [String: Any], onSuccess: @escaping (String) -> ()) {
+    let headers: HTTPHeaders = [
+      "Content-Type": "application/json",
+      "secret-key": "$2b$10$/Co03nL8gBoLVFGv8ETFrOgHD9zpmfQ6YP.IqWBhUwyvtFSNjTxEu",
+      "collection-id": "5f04d06f5d4af74b01283377"
+    ]
+    
+    var result: [String: Any] = [String: Any]()
+    var id: String = "Error"
+    
+    
+    AF.request("https://api.jsonbin.io/b", method: .post, parameters: orderToUpload, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        if response.value as? [String: Any] == nil {
+            print("No internet?")
+            onSuccess("Error")
+        } else {
+            result = response.value! as! [String: Any]
+            id = result["id"] as! String
+        }
+        //        print("Result is: \(result)")
+        print("submitted and id is: \(id)")
+        onSuccess(id)
+    }
+    
 }
 
 /* struct ConfirmView_Previews: PreviewProvider {
